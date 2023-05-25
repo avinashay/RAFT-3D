@@ -58,7 +58,7 @@ def induced_flow(Ts, depth, intrinsics):
     flow3d = X1 - X0
 
     valid = (X0[...,-1] > MIN_DEPTH) & (X1[...,-1] > MIN_DEPTH)
-    return flow2d, flow3d, valid.float()
+    return flow2d, flow3d, valid.float(), X0, X1
 
 
 def backproject_flow3d(flow2d, depth0, depth1, intrinsics):
